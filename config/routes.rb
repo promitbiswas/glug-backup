@@ -54,7 +54,13 @@ Glug::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
-
+  match ':controller(/:action(/:id))(.:format)'
+  match 'purpose' => 'sessions#purpose', :as => :purpose
+  match 'learn' => 'sessions#learn', :as => :learn
+  match 'downloads' => 'sessions#downloads', :as => :downloads
+  match 'mukti' => 'sessions#mukti' , :as => :mukti
+  match 'discussions' => 'sessions#discussions', :as => :discussions
+  match 'alumni' => 'sessions#alumni', :as => :alumni
+  match 'contact_us' => 'sessions#contact_us', :as => :contact_us
 root :to => "sessions#home"
 end
